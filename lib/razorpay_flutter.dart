@@ -140,14 +140,14 @@ class PaymentSuccessResponse {
 class PaymentFailureResponse {
   int? code;
   String? message;
-  Map<dynamic, dynamic>? error;
+  String? error;
 
   PaymentFailureResponse(this.code, this.message, this.error);
 
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
-    var responseBody = map["responseBody"] as Map<dynamic, dynamic>?;
+    var responseBody = map["responseBody"] as String?;
     return new PaymentFailureResponse(code, message, responseBody);
   }
 }
